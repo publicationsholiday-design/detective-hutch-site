@@ -4,431 +4,221 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Detective Hutch: Cryptograms — Solve the Code, Crack the Case</title>
-<meta name="description" content="Crack coded messages to uncover a murder case. Over 1,000 cryptogram puzzles with crosswords and word searches. Free on iPhone and Android.">
+<meta name="description" content="Crack coded messages to uncover a murder case. Over 1,000 cryptogram puzzles with crosswords and word searches. Free on iPhone and Android — plus the Detective Hutch puzzle books on Amazon.">
 <link rel="canonical" href="https://publicationsholiday-design.github.io/detective-hutch-site/">
-
 <meta property="og:type" content="website">
 <meta property="og:title" content="Detective Hutch: Cryptograms">
 <meta property="og:description" content="Every clue is written in code. Crack the cipher, read the case, name the killer.">
 <meta property="og:image" content="https://publicationsholiday-design.github.io/detective-hutch-site/assets/hero-feature.jpg">
 <meta name="robots" content="index, follow">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;700&family=Courier+Prime:wght@400;700&family=Poppins:wght@400;500&display=swap" rel="stylesheet">
-
 <style>
   :root{
-    --ink:#0E0B14; --paper:#EDE4D3; --paper-deep:#DCD0B8;
-    --gold:#C9A24D; --oxblood:#8E2A2A; --ink-text:#1A1614;
+    --base:#231A22; --base-2:#2E2330;
+    --paper:#EDE4D3; --paper-deep:#DCD0B8;
+    --gold:#D8B24E; --gold-bright:#F0C85A;
+    --blood:#9B1B1B; --blood-bright:#C0261F;
+    --ink-text:#1A1614;
     --display:'Zilla Slab',Georgia,serif;
     --mono:'Courier Prime','Courier New',monospace;
     --body:'Poppins',system-ui,sans-serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-
-  body{
-    background:var(--ink);
-    background-image:
-      radial-gradient(ellipse 80% 45% at 50% -8%, rgba(201,162,77,.11), transparent 70%),
-      radial-gradient(ellipse 60% 40% at 50% 108%, rgba(142,42,42,.06), transparent 70%);
-    background-attachment:fixed;
-    color:var(--paper); font-family:var(--body);
-    -webkit-font-smoothing:antialiased;
-    padding:clamp(1rem,4vw,2.5rem) clamp(1rem,5vw,2rem) 3rem;
-  }
-  .sheet{max-width:1000px;margin:0 auto}
-  .rule{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.5}
-
-  /* ---------- hero ---------- */
-  .eyebrow{
-    font-family:var(--mono);font-size:.7rem;letter-spacing:.32em;
-    color:var(--gold);text-transform:uppercase;text-align:center;padding:1.3rem 0 1.1rem;
-  }
-  .hero-art{
-    display:block;width:100%;height:auto;border-radius:4px;
-    box-shadow:0 18px 44px rgba(0,0,0,.62);
-  }
-  .tagline{
-    font-family:var(--display);font-weight:700;
-    font-size:clamp(1.35rem,4.6vw,2.35rem);
-    line-height:1.15;text-align:center;letter-spacing:.03em;
-    padding:2rem 0 .35rem;word-break:break-word;
-  }
+  body{background:var(--base);color:var(--paper);font-family:var(--body);-webkit-font-smoothing:antialiased;padding:0 0 3rem;position:relative;overflow-x:hidden}
+  body::before{content:"";position:fixed;inset:0;z-index:-2;background:
+    radial-gradient(ellipse 90% 55% at 50% -5%, rgba(216,178,78,.22), transparent 62%),
+    radial-gradient(ellipse 70% 50% at 15% 8%, rgba(216,178,78,.10), transparent 55%),
+    radial-gradient(ellipse 80% 60% at 50% 118%, rgba(155,27,27,.20), transparent 68%),
+    linear-gradient(160deg, var(--base-2), var(--base) 60%)}
+  body::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.5;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1400' height='1400' viewBox='0 0 1400 1400'><g fill='%239B1B1B' fill-opacity='0.5'><circle cx='120' cy='210' r='34'/><circle cx='165' cy='245' r='11'/><circle cx='92' cy='250' r='7'/><circle cx='1290' cy='140' r='28'/><circle cx='1250' cy='175' r='9'/><circle cx='1320' cy='185' r='6'/><circle cx='1310' cy='920' r='40'/><circle cx='1260' cy='965' r='13'/><circle cx='1345' cy='965' r='8'/><circle cx='1240' cy='905' r='5'/><circle cx='90' cy='1080' r='30'/><circle cx='140' cy='1120' r='10'/><circle cx='60' cy='1130' r='6'/><ellipse cx='700' cy='1350' rx='60' ry='24'/></g></svg>");
+    background-repeat:no-repeat;background-size:cover;background-position:center}
+  .sheet{max-width:1000px;margin:0 auto;padding:clamp(1.25rem,4vw,2.5rem) clamp(1rem,5vw,2rem) 0}
+  .rule{height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:.55}
+  .eyebrow{font-family:var(--mono);font-size:.7rem;letter-spacing:.32em;color:var(--gold-bright);text-transform:uppercase;text-align:center;padding:1.3rem 0 1.1rem}
+  .hero-art{display:block;width:100%;height:auto;border-radius:4px;box-shadow:0 18px 48px rgba(0,0,0,.55),0 0 0 1px rgba(216,178,78,.25)}
+  .tagline{font-family:var(--display);font-weight:700;font-size:clamp(1.35rem,4.6vw,2.35rem);line-height:1.15;text-align:center;letter-spacing:.03em;padding:2rem 0 .35rem;word-break:break-word}
   .tagline .ch{display:inline-block;transition:color .18s ease}
-  .tagline .ch.scrambling{color:var(--gold)}
+  .tagline .ch.scrambling{color:var(--gold-bright)}
   .tagline .sp{display:inline-block;width:.32em}
-  .decode-note{
-    font-family:var(--mono);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;
-    text-align:center;color:rgba(237,228,211,.36);min-height:1.1em;transition:opacity .5s ease;
-  }
+  .decode-note{font-family:var(--mono);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;text-align:center;color:rgba(237,228,211,.4);min-height:1.1em;transition:opacity .5s ease}
   .decode-note.done{opacity:0}
-  .standfirst{
-    text-align:center;max-width:36rem;margin:1.2rem auto 0;
-    font-size:1rem;line-height:1.65;color:rgba(237,228,211,.74);
-  }
-
-  /* ---------- store buttons ---------- */
+  .standfirst{text-align:center;max-width:36rem;margin:1.2rem auto 0;font-size:1rem;line-height:1.65;color:rgba(237,228,211,.82)}
   .stores{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center;margin-top:1.8rem}
-  .store{
-    font-family:var(--mono);font-size:.74rem;font-weight:700;letter-spacing:.12em;
-    text-transform:uppercase;text-decoration:none;
-    display:inline-flex;align-items:center;gap:.5rem;
-    padding:.85rem 1.4rem;border-radius:3px;
-    background:var(--gold);color:var(--ink-text);
-    transition:background .2s ease,transform .2s ease;
-  }
-  .store.alt{background:transparent;color:var(--paper);border:1px solid rgba(201,162,77,.55)}
-  .store:hover{background:var(--paper);transform:translateY(-2px)}
-  .store.alt:hover{background:rgba(201,162,77,.14);color:var(--paper)}
-  .store:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
-  .store .arr{transition:transform .2s ease}
-  .store:hover .arr{transform:translateX(3px)}
-
-  /* ---------- section heads ---------- */
+  .store{font-family:var(--mono);font-size:.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.4rem;border-radius:3px;background:var(--gold);color:var(--ink-text);transition:background .2s,transform .2s}
+  .store.alt{background:transparent;color:var(--paper);border:1px solid rgba(216,178,78,.6)}
+  .store:hover{background:var(--gold-bright);transform:translateY(-2px)}
+  .store.alt:hover{background:rgba(216,178,78,.15)}
+  .store:focus-visible{outline:3px solid var(--gold-bright);outline-offset:3px}
+  .store .arr{transition:transform .2s}.store:hover .arr{transform:translateX(3px)}
   .sec{margin-top:clamp(3rem,8vw,4.75rem)}
-  .sec-label{
-    font-family:var(--mono);font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;
-    color:var(--gold);text-align:center;margin-bottom:.55rem;
-  }
-  .sec-title{
-    font-family:var(--display);font-weight:700;
-    font-size:clamp(1.5rem,4.4vw,2.15rem);text-align:center;line-height:1.2;
-  }
-  .sec-sub{
-    text-align:center;max-width:34rem;margin:.85rem auto 0;
-    font-size:.95rem;line-height:1.6;color:rgba(237,228,211,.6);
-  }
-
-  /* ---------- screenshots ---------- */
-  .shots{
-    display:grid;grid-template-columns:repeat(3,1fr);
-    gap:clamp(.7rem,2.2vw,1.4rem);margin-top:2rem;align-items:start;
-  }
+  .sec-label{font-family:var(--mono);font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-bright);text-align:center;margin-bottom:.55rem}
+  .sec-title{font-family:var(--display);font-weight:700;font-size:clamp(1.5rem,4.4vw,2.15rem);text-align:center;line-height:1.2}
+  .sec-sub{text-align:center;max-width:34rem;margin:.85rem auto 0;font-size:.95rem;line-height:1.6;color:rgba(237,228,211,.66)}
+  .shots{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(.7rem,2.2vw,1.4rem);margin-top:2rem;align-items:start}
   .shot{text-align:center}
-  .shot img{
-    width:100%;height:auto;display:block;border-radius:10px;
-    border:1px solid rgba(201,162,77,.22);
-    box-shadow:0 14px 30px rgba(0,0,0,.55);
-  }
-  .shot figcaption{
-    font-family:var(--mono);font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;
-    color:rgba(237,228,211,.45);margin-top:.75rem;line-height:1.5;
-  }
-  @media (max-width:620px){
-    .shots{grid-template-columns:1fr 1fr;gap:.7rem}
-    .shots .shot:nth-child(3){grid-column:1 / -1;max-width:62%;margin:0 auto}
-  }
-
-  /* ---------- features ---------- */
-  .feats{
-    display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));
-    gap:1rem;margin-top:2rem;
-  }
-  .feat{
-    background:rgba(237,228,211,.045);
-    border:1px solid rgba(201,162,77,.18);
-    border-radius:3px;padding:1.3rem 1.2rem;
-  }
-  .feat h3{
-    font-family:var(--display);font-weight:700;font-size:1.05rem;
-    margin-bottom:.45rem;color:var(--paper);
-  }
-  .feat p{font-size:.87rem;line-height:1.6;color:rgba(237,228,211,.62)}
-
-  /* ---------- paper card (books) ---------- */
-  .card{
-    position:relative;background:var(--paper);
-    background-image:linear-gradient(160deg,rgba(255,255,255,.5),transparent 45%);
-    color:var(--ink-text);border-radius:2px;overflow:hidden;
-    box-shadow:0 12px 26px rgba(0,0,0,.5),0 2px 0 var(--paper-deep);
-  }
-  .card::after{
-    content:"";position:absolute;inset:0 0 auto 0;height:3px;
-    background:linear-gradient(90deg,rgba(0,0,0,.10),transparent 30%,rgba(0,0,0,.08));
-  }
-  .book{
-    display:block;text-decoration:none;margin-top:2rem;
-    padding:1.7rem clamp(1.3rem,4vw,2rem) 1.5rem;
-    transition:transform .22s cubic-bezier(.2,.7,.3,1),box-shadow .22s ease;
-  }
-  .book:hover,.book:focus-visible{
-    transform:translateY(-5px);
-    box-shadow:0 22px 42px rgba(0,0,0,.6),0 2px 0 var(--paper-deep);outline:none;
-  }
-  .book:focus-visible{box-shadow:0 0 0 3px var(--gold),0 22px 42px rgba(0,0,0,.6)}
-  .book-head{display:flex;align-items:center;justify-content:space-between;gap:.8rem;margin-bottom:.9rem}
-  .book-no{font-family:var(--mono);font-size:.68rem;font-weight:700;letter-spacing:.22em;color:rgba(26,22,20,.5)}
-  .stamp{
-    font-family:var(--mono);font-size:.58rem;font-weight:700;letter-spacing:.16em;
-    text-transform:uppercase;color:var(--oxblood);
-    border:1.5px solid var(--oxblood);border-radius:2px;padding:.24rem .45rem;
-    transform:rotate(-3deg);opacity:.78;white-space:nowrap;
-  }
-  .book h3{font-family:var(--display);font-weight:700;font-size:1.35rem;margin-bottom:.5rem}
-  .book p{font-size:.9rem;line-height:1.6;color:rgba(26,22,20,.72);margin-bottom:1.1rem;max-width:44rem}
-  .book-action{
-    font-family:var(--mono);font-size:.7rem;font-weight:700;letter-spacing:.14em;
-    text-transform:uppercase;color:var(--ink-text);
-    display:inline-flex;align-items:center;gap:.45rem;
-    border-top:1px solid rgba(26,22,20,.16);padding-top:.8rem;
-  }
-  .book-action .arr{transition:transform .22s ease}
-  .book:hover .book-action .arr{transform:translateX(4px)}
-
-  /* ---------- more from our studio ---------- */
-  .studio{
-    display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-    gap:.9rem;margin-top:1.9rem;
-  }
-  .sib{
-    display:block;text-decoration:none;padding:1.35rem 1.25rem;
-    background:rgba(237,228,211,.04);
-    border:1px solid rgba(237,228,211,.1);
-    border-radius:3px;
-    transition:border-color .2s ease,background .2s ease,transform .2s ease;
-  }
-  .sib:hover,.sib:focus-visible{
-    background:rgba(201,162,77,.09);border-color:rgba(201,162,77,.45);
-    transform:translateY(-3px);outline:none;
-  }
-  .sib:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+  .shot img{width:100%;height:auto;display:block;border-radius:10px;border:1px solid rgba(216,178,78,.28);box-shadow:0 14px 30px rgba(0,0,0,.5)}
+  .shot figcaption{font-family:var(--mono);font-size:.63rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(237,228,211,.5);margin-top:.75rem;line-height:1.5}
+  @media (max-width:620px){.shots{grid-template-columns:1fr 1fr;gap:.7rem}.shots .shot:nth-child(3){grid-column:1/-1;max-width:62%;margin:0 auto}}
+  .feats{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:1rem;margin-top:2rem}
+  .feat{background:rgba(237,228,211,.06);border:1px solid rgba(216,178,78,.2);border-radius:3px;padding:1.3rem 1.2rem}
+  .feat h3{font-family:var(--display);font-weight:700;font-size:1.05rem;margin-bottom:.45rem;color:var(--paper)}
+  .feat p{font-size:.87rem;line-height:1.6;color:rgba(237,228,211,.68)}
+  .storecard{position:relative;margin-top:2rem;overflow:hidden;border-radius:3px;background:var(--paper);background-image:linear-gradient(160deg,rgba(255,255,255,.5),transparent 45%);color:var(--ink-text);padding:1.8rem clamp(1.35rem,4vw,2.25rem);box-shadow:0 14px 30px rgba(0,0,0,.5),0 2px 0 var(--paper-deep);display:flex;flex-wrap:wrap;align-items:center;gap:1.2rem;justify-content:space-between}
+  .storecard::after{content:"";position:absolute;inset:0 0 auto 0;height:3px;background:linear-gradient(90deg,var(--blood),transparent 35%,rgba(0,0,0,.08))}
+  .storecard .txt{flex:1 1 320px}
+  .storecard h3{font-family:var(--display);font-weight:700;font-size:1.4rem;margin-bottom:.4rem}
+  .storecard p{font-size:.92rem;line-height:1.55;color:rgba(26,22,20,.72)}
+  .storebtn{font-family:var(--mono);font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:.5rem;white-space:nowrap;padding:.85rem 1.4rem;border-radius:3px;background:var(--blood);color:#fff;transition:background .2s,transform .2s}
+  .storebtn:hover{background:var(--blood-bright);transform:translateY(-2px)}
+  .storebtn:focus-visible{outline:3px solid var(--gold-bright);outline-offset:3px}
+  .storebtn .arr{transition:transform .2s}.storebtn:hover .arr{transform:translateX(3px)}
+  .books{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:.9rem;margin-top:1.4rem}
+  .book{display:flex;flex-direction:column;text-decoration:none;background:rgba(237,228,211,.05);border:1px solid rgba(216,178,78,.2);border-radius:3px;padding:1.3rem 1.25rem;transition:transform .2s,border-color .2s,background .2s}
+  .book:hover,.book:focus-visible{transform:translateY(-4px);border-color:rgba(216,178,78,.6);background:rgba(216,178,78,.08);outline:none}
+  .book:focus-visible{outline:2px solid var(--gold-bright);outline-offset:2px}
+  .book .tag{font-family:var(--mono);font-size:.6rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blood-bright);margin-bottom:.5rem}
+  .book .tag.app{color:var(--gold-bright)}
+  .book h4{font-family:var(--display);font-weight:700;font-size:1.1rem;line-height:1.25;margin-bottom:.4rem;color:var(--paper)}
+  .book p{font-size:.83rem;line-height:1.55;color:rgba(237,228,211,.6);flex:1 1 auto;margin-bottom:.9rem}
+  .book .go{font-family:var(--mono);font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(237,228,211,.75);display:inline-flex;align-items:center;gap:.4rem;border-top:1px solid rgba(216,178,78,.2);padding-top:.7rem}
+  .book .go .arr{transition:transform .2s}.book:hover .go .arr{transform:translateX(4px)}
+  .assoc-note{text-align:center;font-family:var(--mono);font-size:.66rem;letter-spacing:.05em;color:rgba(237,228,211,.4);margin-top:1.4rem;line-height:1.6}
+  .studio{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:.9rem;margin-top:1.9rem}
+  .sib{display:block;text-decoration:none;padding:1.35rem 1.25rem;background:rgba(237,228,211,.045);border:1px solid rgba(237,228,211,.12);border-radius:3px;transition:border-color .2s,background .2s,transform .2s}
+  .sib:hover,.sib:focus-visible{background:rgba(216,178,78,.09);border-color:rgba(216,178,78,.5);transform:translateY(-3px);outline:none}
+  .sib:focus-visible{outline:2px solid var(--gold-bright);outline-offset:2px}
   .sib h3{font-family:var(--display);font-weight:700;font-size:1.05rem;color:var(--paper);margin-bottom:.3rem}
-  .sib p{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;color:rgba(237,228,211,.5);line-height:1.5}
-
-  /* ---------- footer ---------- */
+  .sib p{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;color:rgba(237,228,211,.55);line-height:1.5}
   .signoff{margin-top:clamp(3rem,7vw,4.5rem);padding-top:1.4rem;text-align:center}
-  .signoff p{
-    font-family:var(--mono);font-size:.72rem;letter-spacing:.09em;
-    color:rgba(237,228,211,.34);line-height:1.95;
-  }
-  .signoff a{color:rgba(237,228,211,.55);text-decoration:none;border-bottom:1px solid rgba(201,162,77,.35)}
-  .signoff a:hover{color:var(--gold)}
-
-  @media (prefers-reduced-motion:reduce){
-    .book,.book:hover,.sib,.sib:hover,.store,.store:hover{transform:none;transition:none}
-    .tagline .ch,.decode-note{transition:none}
-  }
-
-  /* ---------- book card image (added) ---------- */
-  .card.book{padding:0}
-  .book-figure{position:relative;width:100%;aspect-ratio:3/4;max-height:520px;
-    display:flex;align-items:center;justify-content:center;overflow:hidden;
-    background:#100b07;border-bottom:1px solid rgba(201,162,77,.25)}
-  .book-figure img{max-width:100%;max-height:100%;width:auto;height:100%;
-    object-fit:contain;display:block;transition:transform .5s cubic-bezier(.2,.7,.3,1)}
-  .card.book:hover .book-figure img{transform:scale(1.03)}
-  .book-body{padding:1.4rem 1.5rem 1.5rem}
-
+  .signoff p{font-family:var(--mono);font-size:.72rem;letter-spacing:.09em;color:rgba(237,228,211,.4);line-height:1.95}
+  .signoff a{color:rgba(237,228,211,.62);text-decoration:none;border-bottom:1px solid rgba(216,178,78,.4)}
+  .signoff a:hover{color:var(--gold-bright)}
+  @media (prefers-reduced-motion:reduce){.book,.book:hover,.sib,.sib:hover,.store,.store:hover,.storebtn,.storebtn:hover{transform:none;transition:none}.tagline .ch,.decode-note{transition:none}}
 </style>
 </head>
 <body>
 <main class="sheet">
-
   <header>
     <div class="rule" aria-hidden="true"></div>
     <p class="eyebrow">iPhone &amp; Android · Free to play</p>
-
-    <img class="hero-art" src="assets/hero-feature.jpg" width="1600" height="782"
-         alt="Detective Hutch: Cryptograms — a detective in silhouette studies a grid of coded letters through a magnifying glass.">
-
-    <!-- SIGNATURE: the tagline arrives enciphered and decodes itself -->
+    <img class="hero-art" src="assets/hero-feature.jpg" width="1600" height="782" alt="Detective Hutch: Cryptograms — a detective in silhouette studies a grid of coded letters through a magnifying glass.">
     <h1 class="tagline" id="cipher" data-word="EVERY CLUE IS IN CODE">EVERY CLUE IS IN CODE</h1>
     <p class="decode-note" id="note" aria-hidden="true">Decrypting…</p>
-
-    <p class="standfirst">
-      Crack the cipher to read the next line of the case, and work your way to the
-      killer. Over a thousand puzzles, with crosswords and word searches hidden
-      along the way.
-    </p>
-
+    <p class="standfirst">Crack the cipher to read the next line of the case, and work your way to the killer. Over a thousand puzzles, with crosswords and word searches hidden along the way.</p>
     <div class="stores">
-      <a class="store" href="https://apps.apple.com/us/app/detective-hutch-cryptograms/id6771742540">
-        Download on iPhone <span class="arr" aria-hidden="true">→</span>
-      </a>
-      <a class="store alt" href="https://play.google.com/store/apps/details?id=com.hutch.crypto_hutch">
-        Get it on Android <span class="arr" aria-hidden="true">→</span>
-      </a>
+      <a class="store" href="https://apps.apple.com/us/app/detective-hutch-cryptograms/id6771742540">Download on iPhone <span class="arr" aria-hidden="true">→</span></a>
+      <a class="store alt" href="https://play.google.com/store/apps/details?id=com.hutch.crypto_hutch">Get it on Android <span class="arr" aria-hidden="true">→</span></a>
     </div>
   </header>
 
-  <!-- ---------- screenshots ---------- -->
   <section class="sec" aria-labelledby="s-look">
     <p class="sec-label">From the case file</p>
     <h2 class="sec-title" id="s-look">A desk, a code, and a body</h2>
     <div class="shots">
-      <figure class="shot">
-        <img src="assets/shot-cipher.jpg" width="620" height="1051" loading="lazy"
-             alt="A cryptogram puzzle in progress, with coded letters above blank spaces and a keyboard below.">
-        <figcaption>Decode the clue</figcaption>
-      </figure>
-      <figure class="shot">
-        <img src="assets/shot-crossword.jpg" width="620" height="954" loading="lazy"
-             alt="A timed bonus crossword grid with a clue reading: wild or uncultivated flowering plant.">
-        <figcaption>Beat the bonus grid</figcaption>
-      </figure>
-      <figure class="shot">
-        <img src="assets/shot-home.jpg" width="620" height="1051" loading="lazy"
-             alt="The home screen showing detective rank, coin balance, case progress and a daily streak.">
-        <figcaption>Climb the ranks</figcaption>
-      </figure>
+      <figure class="shot"><img src="assets/shot-cipher.jpg" width="620" height="1051" loading="lazy" alt="A cryptogram puzzle in progress with coded letters above blank spaces."><figcaption>Decode the clue</figcaption></figure>
+      <figure class="shot"><img src="assets/shot-crossword.jpg" width="620" height="954" loading="lazy" alt="A timed bonus crossword grid with a clue reading: wild or uncultivated flowering plant."><figcaption>Beat the bonus grid</figcaption></figure>
+      <figure class="shot"><img src="assets/shot-home.jpg" width="620" height="1051" loading="lazy" alt="Home screen showing detective rank, coins, case progress and a daily streak."><figcaption>Climb the ranks</figcaption></figure>
     </div>
   </section>
 
-  <!-- ---------- features ---------- -->
   <section class="sec" aria-labelledby="s-what">
     <p class="sec-label">What you get</p>
     <h2 class="sec-title" id="s-what">Three puzzles, one investigation</h2>
-    <p class="sec-sub">
-      Every case is one story told in code. Solve it your way — the bonus rounds
-      are there when you're stuck.
-    </p>
+    <p class="sec-sub">Every case is one story told in code. Solve it your way — the bonus rounds are there when you're stuck.</p>
     <div class="feats">
-      <div class="feat">
-        <h3>Over 1,000 ciphers</h3>
-        <p>Each solved message is the next line of a murder case, not a random quote.</p>
-      </div>
-      <div class="feat">
-        <h3>Crosswords &amp; word search</h3>
-        <p>Win a bonus round and its words drop straight into your cipher as free letters.</p>
-      </div>
-      <div class="feat">
-        <h3>Case journal</h3>
-        <p>Every message you decode is filed away, so the story reads back in order.</p>
-      </div>
-      <div class="feat">
-        <h3>Ranks &amp; daily streak</h3>
-        <p>Work up from Rookie to Chief, and collect a bonus every day you show up.</p>
-      </div>
-      <div class="feat">
-        <h3>Hints when you need them</h3>
-        <p>Stuck on a letter? Spend coins to reveal one and keep the case moving.</p>
-      </div>
-      <div class="feat">
-        <h3>Plays offline</h3>
-        <p>Every puzzle is on your device. No signal needed on the train.</p>
-      </div>
+      <div class="feat"><h3>Over 1,000 ciphers</h3><p>Each solved message is the next line of a murder case, not a random quote.</p></div>
+      <div class="feat"><h3>Crosswords &amp; word search</h3><p>Win a bonus round and its words drop straight into your cipher as free letters.</p></div>
+      <div class="feat"><h3>Case journal</h3><p>Every message you decode is filed away, so the story reads back in order.</p></div>
+      <div class="feat"><h3>Ranks &amp; daily streak</h3><p>Work up from Rookie to Chief, and collect a bonus every day you show up.</p></div>
+      <div class="feat"><h3>Hints when you need them</h3><p>Stuck on a letter? Spend coins to reveal one and keep the case moving.</p></div>
+      <div class="feat"><h3>Plays offline</h3><p>Every puzzle is on your device. No signal needed on the train.</p></div>
     </div>
   </section>
 
-  <!-- ---------- books (Hutch, in print) ---------- -->
   <section class="sec" aria-labelledby="s-books">
-    <p class="sec-label">Also from the desk</p>
-    <h2 class="sec-title" id="s-books">Detective Hutch in print</h2>
-    <a class="card book" href="https://www.amazon.com/stores/author/B0F28R1F5G/allbooks?ccs_id=d435c91a-ed67-49f5-80c0-a6e6e219feba">
-      <div class="book-figure">
-        <img src="assets/book-hutch.png" alt="Detective Hutch puzzle books" loading="lazy">
-      </div>
-      <div class="book-body">
-        <div class="book-head">
-          <span class="book-no">File 02</span>
-          <span class="stamp">Paperback</span>
-        </div>
-        <h3>The Puzzle Books</h3>
-        <p>
-          The same cases on paper. Ciphers, brain teasers and logic puzzles to solve
-          with a pencil — no battery required.
-        </p>
-        <span class="book-action">Browse on Amazon <span class="arr" aria-hidden="true">→</span></span>
-      </div>
-    </a>
+    <p class="sec-label">Solve them on paper too</p>
+    <h2 class="sec-title" id="s-books">The Detective Hutch puzzle books</h2>
+    <p class="sec-sub">The same cases in print — rhymed riddles, ciphers and bonus word searches to solve with a pencil. Two of them are the app's cases you can hold in your hand.</p>
+    <div class="storecard">
+      <div class="txt"><h3>The complete case library</h3><p>Every Detective Hutch mystery book in one place on Amazon.</p></div>
+      <a class="storebtn" href="https://www.amazon.com/stores/author/B0F28R1F5G/allbooks?tag=cookbook090e-21">Browse all books <span class="arr" aria-hidden="true">→</span></a>
+    </div>
+    <div class="books">
+      <a class="book" href="https://www.amazon.com/Castles-Shadow-Detective-Coloring-Crossword/dp/B0FLWDW7VV?tag=cookbook090e-21">
+        <span class="tag app">Case 4 in the app</span><h4>The Castle's Shadow</h4>
+        <p>Roland Vance is dead at Blackthorn Castle, and ten suspects have something to hide. Bonus mazes and coloring pages.</p>
+        <span class="go">On Amazon <span class="arr" aria-hidden="true">→</span></span></a>
+      <a class="book" href="https://www.amazon.com/Detective-Hutchs-Springtime-Killer-Case/dp/B0GLGT3M3Y?tag=cookbook090e-21">
+        <span class="tag app">Case 1 in the app</span><h4>The Springtime Killer Case</h4>
+        <p>A festival, a poisoned bloom, and a killer hiding in plain sight. Where Detective Hutch's story begins.</p>
+        <span class="go">On Amazon <span class="arr" aria-hidden="true">→</span></span></a>
+      <a class="book" href="https://www.amazon.com/Detective-Hutchs-Murder-Mystery-Puzzle/dp/B0FMQCHG91?tag=cookbook090e-21">
+        <span class="tag">Downtown Killer Case</span><h4>Detective Hutch's Murder Mystery Puzzle</h4>
+        <p>Solve the downtown killer case through rhymed riddles in crosswords and answers hidden in word searches.</p>
+        <span class="go">On Amazon <span class="arr" aria-hidden="true">→</span></span></a>
+      <a class="book" href="https://www.amazon.com/Mystery-Crossword-Searches-Whodunnit-Mysteries/dp/B0FJNPZFNC?tag=cookbook090e-21">
+        <span class="tag">12 cases</span><h4>Murder Mystery Puzzle Book</h4>
+        <p>Rhymed riddles in crossword puzzles and clues in word searches — twelve whodunnit cases of Detective Hutch.</p>
+        <span class="go">On Amazon <span class="arr" aria-hidden="true">→</span></span></a>
+      <a class="book" href="https://www.amazon.com/Christmas-Puzzle-Book-Challenges-Cryptograms/dp/B0G298CKJG?tag=cookbook090e-21">
+        <span class="tag">Seasonal · 75+ puzzles</span><h4>The Christmas Puzzle Book: Jewel Thief Mystery</h4>
+        <p>Cryptograms, word scrambles and crosswords wrapped around a festive heist. Bonus sudoku and mazes.</p>
+        <span class="go">On Amazon <span class="arr" aria-hidden="true">→</span></span></a>
+      <a class="book" href="https://www.amazon.com/Detective-Puzzle-Book-Adults-Cryptograms/dp/B0G5F2WP1B?tag=cookbook090e-21">
+        <span class="tag">Cryptograms</span><h4>Detective Puzzle Book for Adults</h4>
+        <p>A full activity book of cryptograms and mixed puzzles for grown-up sleuths.</p>
+        <span class="go">On Amazon <span class="arr" aria-hidden="true">→</span></span></a>
+    </div>
+    <p class="assoc-note">As an Amazon Associate, Holiday Publications earns from qualifying purchases.</p>
   </section>
 
-  <!-- ---------- more from our studio ---------- -->
   <section class="sec" aria-labelledby="s-studio">
     <div class="rule" aria-hidden="true"></div>
     <p class="sec-label" style="margin-top:1.9rem">Elsewhere</p>
     <h2 class="sec-title" id="s-studio">More from our studio</h2>
     <div class="studio">
-      <a class="sib" href="https://publicationsholiday-design.github.io/Planmytravel-site/index.html">
-        <h3>Plan My Travel</h3>
-        <p>Day-by-day city itineraries</p>
-      </a>
-      <a class="sib" href="https://publicationsholiday-design.github.io/cookbook-site/">
-        <h3>All-in-One Recipes Cookbook</h3>
-        <p>700+ recipes</p>
-      </a>
-      <a class="sib" href="https://publicationsholiday-design.github.io/numastra-site/">
-        <h3>Numastra</h3>
-        <p>Your daily prediction</p>
-      </a>
+      <a class="sib" href="https://www.amazon.com/stores/JIMMY-S/author/B0DSVRCYC9?tag=cookbook090e-21"><h3>Puzzle &amp; Activity Books</h3><p>Word search, sudoku &amp; more · by Jimmy S</p></a>
+      <a class="sib" href="https://publicationsholiday-design.github.io/Planmytravel-site/index.html"><h3>Plan My Travel</h3><p>Day-by-day city itineraries</p></a>
+      <a class="sib" href="https://publicationsholiday-design.github.io/cookbook-site/"><h3>All-in-One Recipes Cookbook</h3><p>700+ recipes</p></a>
+      <a class="sib" href="https://publicationsholiday-design.github.io/numastra-site/"><h3>Numastra</h3><p>Your daily prediction</p></a>
     </div>
   </section>
 
   <footer class="signoff">
     <div class="rule" aria-hidden="true"></div>
-    <p>
-      Detective Hutch: Cryptograms · an independent studio<br>
-      Questions? <a href="mailto:publicationsholiday@gmail.com">publicationsholiday@gmail.com</a>
-    </p>
+    <p>Detective Hutch: Cryptograms · an independent studio<br>Questions? <a href="mailto:publicationsholiday@gmail.com">publicationsholiday@gmail.com</a></p>
   </footer>
-
 </main>
-
 <script>
 (function () {
-  var el = document.getElementById('cipher'), note = document.getElementById('note');
-  if (!el) return;
-  var word = el.dataset.word || el.textContent.trim();
-  var letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  el.textContent = '';
-  var spans = [];
-  for (var i = 0; i < word.length; i++) {
-    if (word[i] === ' ') {
-      var gap = document.createElement('span');
-      gap.className = 'sp'; gap.setAttribute('aria-hidden','true');
-      el.appendChild(gap); spans.push(null); continue;
-    }
-    var s = document.createElement('span');
-    s.className = 'ch'; s.setAttribute('aria-hidden','true');
-    s.textContent = reduce ? word[i] : letters[Math.floor(Math.random()*26)];
-    if (!reduce) s.classList.add('scrambling');
-    el.appendChild(s); spans.push(s);
+  var el=document.getElementById('cipher'),note=document.getElementById('note');
+  if(!el)return;
+  var word=el.dataset.word||el.textContent.trim();
+  var letters='ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  el.textContent='';var spans=[];
+  for(var i=0;i<word.length;i++){
+    if(word[i]===' '){var g=document.createElement('span');g.className='sp';g.setAttribute('aria-hidden','true');el.appendChild(g);spans.push(null);continue;}
+    var s=document.createElement('span');s.className='ch';s.setAttribute('aria-hidden','true');
+    s.textContent=reduce?word[i]:letters[Math.floor(Math.random()*26)];
+    if(!reduce)s.classList.add('scrambling');el.appendChild(s);spans.push(s);
   }
-
-  // Real text kept for screen readers and search engines.
-  var sr = document.createElement('span');
-  sr.textContent = word;
-  sr.style.cssText = 'position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;';
+  var sr=document.createElement('span');sr.textContent=word;
+  sr.style.cssText='position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;';
   el.appendChild(sr);
-
-  if (reduce) { if (note) note.classList.add('done'); return; }
-
-  var total = 0, settled = 0;
-  spans.forEach(function (s) { if (s) total++; });
-
-  spans.forEach(function (s, i) {
-    if (!s) return;
-    var target = word[i];
-    var spin = setInterval(function () {
-      s.textContent = letters[Math.floor(Math.random()*26)];
-    }, 55);
-    setTimeout(function () {
-      clearInterval(spin);
-      s.textContent = target;
-      s.classList.remove('scrambling');
-      settled++;
-      if (settled === total && note) {
-        note.textContent = 'Decrypted';
-        setTimeout(function(){ note.classList.add('done'); }, 700);
-      }
-    }, 380 + i * 70 + Math.random() * 110);
+  if(reduce){if(note)note.classList.add('done');return;}
+  var total=0,settled=0;spans.forEach(function(s){if(s)total++;});
+  spans.forEach(function(s,i){
+    if(!s)return;var target=word[i];
+    var spin=setInterval(function(){s.textContent=letters[Math.floor(Math.random()*26)];},55);
+    setTimeout(function(){clearInterval(spin);s.textContent=target;s.classList.remove('scrambling');settled++;
+      if(settled===total&&note){note.textContent='Decrypted';setTimeout(function(){note.classList.add('done');},700);}
+    },380+i*70+Math.random()*110);
   });
 })();
 </script>
 </body>
 </html>
-<div style="text-align:center;padding:2rem 1rem;font-family:sans-serif;
-            border-top:1px solid rgba(128,128,128,.2);margin-top:2rem">
-  <p style="opacity:.7;font-size:.9rem;margin-bottom:.75rem">
-    More from Holiday Publications
-  </p>
-  <a href="https://publicationsholiday-design.github.io/"
-     style="display:inline-block;padding:.6rem 1.4rem;border-radius:999px;
-            background:#F4703A;color:#fff;text-decoration:none;font-weight:700;
-            font-size:.9rem">
-    Explore all our apps →
-  </a>
-</div>
